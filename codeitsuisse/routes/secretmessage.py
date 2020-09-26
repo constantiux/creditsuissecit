@@ -1,21 +1,21 @@
 import logging
 import json
 
-from flask import request, jsonify;
+from flask import request, jsonify
 
-from codeitsuisse import app;
+from codeitsuisse import app
 
 logger = logging.getLogger(__name__)
 
 @app.route('/encryption', methods=['POST'])
 def evaluateSecretMessage():
-    data = request.get_json();
+    data = request.get_json()
     logging.info("data sent for evaluation {}".format(data))
     result = []
     for test_case in data:
         result.append(encrypt(test_case["n"], test_case["text"]))
     logging.info("My result :{}".format(result))
-    return jsonify(result);
+    return jsonify(result)
 
 def encrypt(n, text):
     # removing sapces and non alphanum characters

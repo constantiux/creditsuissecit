@@ -1,15 +1,15 @@
 import logging
 import json
 
-from flask import request, jsonify;
+from flask import request, jsonify
 
-from codeitsuisse import app;
+from codeitsuisse import app
 
 logger = logging.getLogger(__name__)
 
 @app.route('/salad-spree', methods=['POST'])
 def evaluateSaladSpree():
-    data = request.get_json();
+    data = request.get_json()
     logging.info("data sent for evaluation {}".format(data))
     numSalad = data.get("number_of_salads")
     saladStore = data.get("salad_prices_street_map")
