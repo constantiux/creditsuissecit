@@ -18,7 +18,7 @@ def evaluateFruit():
     result = 0
     price = {
         "maPomegranate": 60,
-        "maPineapple": 60,
+        "maPineapple": 70,
         "maApple": 60,
         "maRamubutan": 60,
         "maWatermelon": 60,
