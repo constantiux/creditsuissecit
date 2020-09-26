@@ -17,12 +17,12 @@ def evaluateFruit():
     logging.info("data sent for evaluation {}".format(data))
     result = 0
     price = {
-        "maPomegranate": 60,
-        "maPineapple": 60,
-        "maApple": 60,
-        "maRambutan": 60,
-        "maWatermelon": 60,
-        "maAvocado": 60
+        "maPomegranate": 57,
+        "maPineapple": 57,
+        "maApple": 57,
+        "maRamubutan": 57,
+        "maWatermelon": 57,
+        "maAvocado": 57
     }
     for fruit, num in data.items():
         logging.info("fruit, num: {}, {}".format(fruit, num))
