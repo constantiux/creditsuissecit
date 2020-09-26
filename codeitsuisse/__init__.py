@@ -4,3 +4,4 @@ import codeitsuisse.routes.square
 import codeitsuisse.routes.secretmessage
 import codeitsuisse.routes.saladspree
 import codeitsuisse.routes.revisitgeometry
+import codeitsuisse.routes.magicfruit
