@@ -15,8 +15,10 @@ def evaluateFruit():
     data = data.decode("UTF-8")
     data = ast.literal_eval(data)
     logging.info("data sent for evaluation {}".format(data))
-    result = 0
+    i = result = 0
+    price = [10,10,10]
     for fruit, num in data.items():
         logging.info("fruit, num: {}, {}".format(fruit, num))
-        result += num * num * 5
+        result += num * price[i]
+        i += 1
     return jsonify(result)
