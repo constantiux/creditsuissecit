@@ -18,5 +18,5 @@ def evaluateFruit():
     result = 0
     for fruit, num in data.items():
         logging.info("fruit, num: {}, {}".format(fruit, num))
-        result += num * num * 10
+        result += num * num * 15
     return jsonify(result)
