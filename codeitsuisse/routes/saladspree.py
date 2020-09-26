@@ -13,7 +13,7 @@ def evaluateSaladSpree():
     logging.info("data sent for evaluation {}".format(data))
     numSalad = data.get("number_of_salads")
     saladStore = data.get("salad_prices_street_map")
-    cheapest = 999
+    cheapest = 9999999999999999
     for salad in saladStore:
         cheapest = min(cheapest, checksalad(salad, numSalad))
     #inputValue = data.get("input");
@@ -24,7 +24,7 @@ def evaluateSaladSpree():
     return jsonify(result)
 
 def checksalad(prices, demand):
-    salad = 999
+    salad = 9999999999999999
     flag = temp = 0
     for p in prices:
         logging.info("temp, flag: {}, {}".format(temp, flag))
