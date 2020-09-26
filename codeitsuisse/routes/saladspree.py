@@ -15,14 +15,17 @@ def evaluateSaladSpree():
     saladStore = data.get("salad_prices_street_map")
     cheapest = 9999999999999999
     for salad in saladStore:
+        logging.info("{}".format(checksalad(salad, numSalad)))
         cheapest = min(cheapest, checksalad(salad, numSalad))
         logging.info("now cheapest :{}".format(cheapest))
     #inputValue = data.get("input");
     #result = inputValue * inputValue
     #logging.info("My result :{}".format(result))
-    logging.info("My result :{}".format(cheapest))
     if cheapest == 9999999999999999:
-        cheapest = 0
+        logging.info("My result :{}".format(0))
+        result = {"result": 0}
+        return jsonify(result)
+    logging.info("My result :{}".format(cheapest))
     result = {"result": cheapest}
     return jsonify(result)
 
@@ -31,13 +34,16 @@ def checksalad(prices, demand):
     a = b = -1
     for p in range(len(prices)):
         #print(a, b)
-        if prices[p] == 'X' or (p == len(prices) - 1):
+        if p == len(prices) - 1 and b >= demand - 1:
+            salad = min(salad, maxSum(prices[a:a+b+1], b+1, demand))
+            continue
+        if prices[p] == 'X':
             #print("its x")
             if b >= demand:
                 #print(prices[a:b])
                 salad = min(salad, maxSum(prices[a:a+b], b, demand))
             a = b = -1
-        else:
+        elif prices[p] != 'X':
             #print("not x")
             if a == -1:
                 a = p
