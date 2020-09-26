@@ -20,8 +20,8 @@ def evaluateFruit():
         "maPomegranate": 60,
         "maPineapple": 70,
         "maApple": 60,
-        "maRamubutan": 60,
-        "maWatermelon": 60,
+        "maRamubutan": 63,
+        "maWatermelon": 63,
         "maAvocado": 60
     }
     for fruit, num in data.items():
