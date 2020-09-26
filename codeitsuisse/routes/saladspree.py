@@ -60,6 +60,6 @@ def maxSum(arr, n, k):
     for i in range(k, n): 
 
         curr_sum += int(arr[i]) - int(arr[i-k]) 
-        res = max(res, curr_sum) 
+        res = min(res, curr_sum) 
 
     return res
