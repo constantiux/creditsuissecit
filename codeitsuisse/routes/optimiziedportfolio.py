@@ -35,5 +35,5 @@ def evaluatePortfolio():
         result.append({"HedgePositionName":bestIndex[0],"OptimalHedgeRatio":optimal, "NumFuturesContract":minimum})
     #inputValue = data.get("input")
     #result = inputValue * inputValue
-    #logging.info("My result :{}".format(result))
-    #return json.dumps(result)
+    logging.info("My result :{}".format(result))
+    return jsonify({"outputs": result})
