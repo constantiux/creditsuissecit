@@ -9,3 +9,4 @@ import codeitsuisse.routes.cleanthefloor
 import codeitsuisse.routes.cluster
 import codeitsuisse.routes.supermarketmaze
 import codeitsuisse.routes.contacttracing
+import codeitsuisse.routes.optimiziedportfolio
