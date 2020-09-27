@@ -8,3 +8,4 @@ import codeitsuisse.routes.magicfruit
 import codeitsuisse.routes.cleanthefloor
 import codeitsuisse.routes.cluster
 import codeitsuisse.routes.supermarketmaze
+import codeitsuisse.routes.contacttracing
