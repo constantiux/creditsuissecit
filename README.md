@@ -1,12 +1,18 @@
 # it's CodeIT Suisse 2020!
 
+[![Deploy to Heroku](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/grrlic/algoturtle) or test it on [Glitch](http://codeitsuisse.glitch.me/)
+
+## Introduction
+
 As someone who just began doing competitive programming questions, this 24H challenge is disturbingly a great cause to make you an insane person for one whole day pun intended. Unlike **Codeforces** and **Codechef**, you are not only have to figure out the more efficient algorithms for each respective problems, but you have setup and deploy your code (in my case it's _python_ and wrap it with _flask_ and _gunicorn_) to _Heroku_ and at the least had to make sure you are treating the corrent input (JSON or text) and lastly _jsonify_ the **return** value.
 
 Too bad but not too bad, I managed to fight up the ladder and ended up at the _11th pos_ of the individual Hong Kong leaderboard. For you who are in the penultimate year and below, this challenge is definitely a _yes yes_.
 
 ![](res/leaderboard.jpg)
 
-(*) _Disclaimer_: After a while since the competition ended, I decided to do a full documentation out of my interest to complete the questions that I unable to finish. If any of from the Credit Suisse organizer express concerns regarding copyright issues, please let me know.
+## Afterwards..
+
+(*) **_Disclaimer_**: After a while since the competition ended, I decided to do a full documentation out of my interest to complete the questions that I unable to finish. If any of from the Credit Suisse organizer express concerns regarding copyright issues, please let me know.
 
 **Credits**:
 To make it quick, I decided to source from other participants' solutions, so kudos to:
