@@ -1,6 +1,8 @@
 from flask import Flask
 app = Flask(__name__, template_folder='views')
 
+import codeitsuisse.routes.bored_scribe
+import codeitsuisse.routes.bucket_fill
 import codeitsuisse.routes.clean_floor
 import codeitsuisse.routes.cluster
 import codeitsuisse.routes.contact_trace
@@ -16,4 +18,5 @@ import codeitsuisse.routes.snakes_ladders_smoke_mirrors
 import codeitsuisse.routes.social_distancing
 import codeitsuisse.routes.square
 import codeitsuisse.routes.supermarket_maze
+import codeitsuisse.routes.swap_hedge
 import codeitsuisse.routes.yin_yang

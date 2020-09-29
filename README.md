@@ -50,7 +50,6 @@ Besides `/square` there are 20 others respective to each problem statements. The
 - `/intelligent-farming`
 - `/olympiad-of-babylon`
 - `/optimizedportfolio`
-- `/pre-tick`
 - `/revisitgeometry`
 - `/salad-spree`
 - `/slsm`
