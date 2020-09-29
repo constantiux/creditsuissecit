@@ -1,6 +1,5 @@
 import logging
 import json
-
 from flask import request, jsonify
 from collections import deque
 from codeitsuisse import app
@@ -21,8 +20,6 @@ def evaluateSupermarketMaze():
         N = len(maze[0])
         solve = BFS(maze, start[1], start[0], end[1], end[0])
         result[case] = solve
-    #inputValue = data.get("input")
-    #result = inputValue * inputValue
     logging.info("My result :{}".format(result))
     return jsonify({"answers": result})
 

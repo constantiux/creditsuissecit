@@ -1,11 +1,23 @@
+import os
+import glob
 import logging
 import socket
+
+from flask import Flask, request, render_template, jsonify,send_from_directory
 from codeitsuisse import app
-logger = logging.getLogger(__name__)
 
 @app.route('/', methods=['GET'])
 def default_route():
-    return "Python Template"
+    root = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'codeitsuisse', 'views', 'problems')
+    paths = glob.glob(os.path.join(root, '*.html'))
+    pages = [path.split('/')[-1] for path in paths]
+    pages.sort()
+    return render_template('index.html', base='/codeitsuisse/views/problems/', pages=pages)
+
+@app.route('/codeitsuisse/views/problems/<path:path>', methods=['GET'])
+def problemlist(path):
+    root = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'codeitsuisse', 'views', 'problems')
+    return send_from_directory(root, path)
 
 
 logger = logging.getLogger()
@@ -15,7 +27,6 @@ formatter = logging.Formatter(
 handler.setFormatter(formatter)
 logger.addHandler(handler)
 logger.setLevel(logging.INFO)
-
 
 
 if __name__ == "__main__":

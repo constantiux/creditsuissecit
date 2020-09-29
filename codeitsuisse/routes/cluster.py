@@ -1,51 +1,44 @@
 import logging
-import json
-
 from flask import request, jsonify
-
 from codeitsuisse import app
+from queue import Queue
 
 logger = logging.getLogger(__name__)
 
 @app.route('/cluster', methods=['POST'])
 def evaluateCluster():
     data = request.get_json()
-    logging.info("data sent for evaluation {}".format(data))
-    ans = Solution()
-    result = ans.numIslands(data)
-    logging.info("My result :{}".format(result))
-    return json.dumps({"answer": result})
+    logging.info('data sent for evaluation: {}'.format(data))
+    result = solve(data)
+    logging.info('my result: {}'.format(result))
+    ret = {'answer': result}
+    return jsonify(ret)
 
-class Solution:
-    def numIslands(self, grid) -> int:
-        if len(grid) == 0: return 0
-        rows = len(grid); cols = len(grid[0])
-        self.count = sum(grid[i][j] == '1' for i in range(rows) for j in range(cols))
-        parent = list(range(rows*cols))
-        rank = [0] * rows*cols
-        
-        def find(x: int) -> int:
-            if parent[x] != x:
-                parent[x] = find(parent[x])
-            return parent[x]
-        
-        def union(x: int, y: int) -> None:
-            xroot = find(x)
-            yroot = find(y)
-            if xroot == yroot: return 
-            if rank[xroot] < rank[yroot]:
-                xroot, yroot = yroot, xroot
-            parent[yroot] = xroot
-            rank[xroot] = max(rank[xroot], rank[yroot]+1)
-            self.count -= 1
-        
-        for i in range(rows):
-            for j in range(cols):
-                if grid[i][j] == '*':
+def solve(grid):
+    rows = len(grid)
+    cols = len(grid[0])
+    ans = 0
+    for i in range(rows):
+        for j in range(cols):
+            if grid[i][j] == '1':
+                ans += 1
+                flood(grid, i, j, rows, cols)
+    return ans
+
+def flood(grid, r, c, rows, cols):
+    q = Queue(maxsize = 1000000)
+    q.put((r, c))
+
+    while(not q.empty()):
+        curr = q.get()
+        x, y = curr
+        grid[x][y] = '*'
+        for i in range(-1, 2):
+            for j in range(-1, 2):
+                if i == 0 and j == 0:
                     continue
-                index = i*cols + j
-                if j < cols-1 and grid[i][j+1] == '1':
-                    union(index, index+1)
-                if i < rows-1 and grid[i+1][j] == '1':
-                    union(index, index+cols)
-        return self.count
+                x2, y2 = x + i, y + j
+                if x2 < 0 or x2 >= rows or y2 < 0 or y2 >= cols:
+                    continue
+                if grid[x2][y2] != '*':
+                    q.put((x2, y2))

@@ -1,0 +1,7 @@
+{
+    "name": "CodeIT Suisse 2020",
+    "description": "Test your alogrithms skills",
+    "repository": "https://github.com/grrlic/creditsuissecit",
+    "logo": "https://node-js-sample.herokuapp.com/node.png",
+    "keywords": ["python", "flask", "algorithms"]
+}
