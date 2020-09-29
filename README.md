@@ -1,6 +1,6 @@
 # it's CodeIT Suisse 2020!
 
-[![Deploy to Heroku](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/grrlic/algoturtle) or test it on [Glitch](http://codeitsuisse.glitch.me/)
+[![Deploy to Heroku](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/grrlic/creditsuissecit) or test it on [Glitch](http://codeitsuisse.glitch.me/)
 
 ## Introduction
 
